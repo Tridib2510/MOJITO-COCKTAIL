@@ -11,6 +11,8 @@ export const App = () => {
     <main>
       <Navbar/>
       <Hero/>
+      <div className="h-dvh bg-black"/> 
+      {/* we can now test the scroll */}
     </main>
   )
 }
