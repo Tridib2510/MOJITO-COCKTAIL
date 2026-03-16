@@ -1,7 +1,18 @@
 import { useGSAP } from "@gsap/react"
 import { SplitText } from "gsap/all"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 import gsap from "gsap"
+import { useRef } from "react"
+import {useMediaQuery} from "react-responsive"
+
+gsap.registerPlugin(ScrollTrigger)
+
 const Hero = () => {
+  const videoRef = useRef<HTMLVideoElement>(null)
+  const videoTimelineRef=gsap.timeline({})
+
+  const isMobile=useMediaQuery({maxWidth:767}) //If it is upto 767 it is mobile else it is web
+
   useGSAP(()=>{
     const heroSplit=new SplitText('.title',{type:'chars,words'}); //Split by each letter
     const paragraphSplit=new SplitText('.subtitle',{type:'lines'}) //Split line by line
@@ -33,9 +44,36 @@ const Hero = () => {
       .to('.left-leaf',{y:-200},0)
       // While scrolling we observe that the top leaf move up while we scroll and the bottom leaf move down while scrolling
 
- 
+      //The drink animation effect is just a video that is playing frame by frame as the user scroll through it
+  
+    const startValue=isMobile?'top 50%':'center 60%' //'top 50%' when top of video reaches 50% down the screen the animation starts 
+    const endValue=isMobile?'120% TOP': 'bottom top' 
+    let tl = gsap.timeline({
+	 scrollTrigger: {
+		trigger: "video",
+		start: startValue,
+		end: endValue,
+		scrub: true, //Animation progress is directly tied to scroll position , 0%-->video frame 0 50%-->video middle
+		pin: true,//The video stays fixed while scrolling.
+	 },
+	});
+  if(videoRef.current)
+    // Wait until video metadata loads 
+  // Metadata includes duration,width,height,frame info . We need this because videoRef.current.duration is unknown until metadata loads
+  videoRef.current.onloadedmetadata = () => {
+  if(videoRef.current)
+	 tl.to(videoRef.current, {
+  // currentTime-->It represents the current playback time in seconds. Animates for currentTime=0 to currentTime=full video duration
+		currentTime: videoRef.current.duration, //updating currentTime based on video duration
+	 });
+	};
+  // We might observe that our video might be skipping frames sometimes 
+  // This happens because most videos have a key frame every few seconds but for
+  // scrub based animation we want every single frame to be a key frame it can be fixed
+  // with FFmpeg(opensource tool for processing video and audio files)
   },[])
   return (
+    <>
     <section id="hero" className="noisy">
       <h1 className="title">MOJITO</h1>
       <img 
@@ -66,6 +104,16 @@ const Hero = () => {
         </div>
        </div>
     </section>
+    <div className="video absolute inset-0">
+      <video 
+      ref={videoRef}
+      src="/videos/input.mp4"
+      muted
+      playsInline //remove the video elements like trackbar
+      preload="auto" //loads automatically
+      />
+    </div>
+    </>
   )
 }
 
