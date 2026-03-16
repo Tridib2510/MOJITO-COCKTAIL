@@ -9,7 +9,6 @@ gsap.registerPlugin(ScrollTrigger)
 
 const Hero = () => {
   const videoRef = useRef<HTMLVideoElement>(null)
-  const videoTimelineRef=gsap.timeline({})
 
   const isMobile=useMediaQuery({maxWidth:767}) //If it is upto 767 it is mobile else it is web
 
