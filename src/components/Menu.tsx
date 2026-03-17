@@ -64,8 +64,8 @@ const Menu = () => {
   return (
     <section id="menu" aria-labelledby="menu-heading">
       {/* aria-labelledby is an accessibility attribute used in HTML to connect an element to another element that provides its label. */}
-      <img src="/images/slider-left-leaf.png" alt="left-leaf" id="m-left-leaf" />
-      <img src="/images/slider-right-leaf.png" alt="right-leaf" id="m-right-leaf"/>
+      {/* <img src="/images/slider-left-leaf.png" alt="left-leaf" id="m-left-leaf" />
+	    <img src="/images/slider-right-leaf.png" alt="right-leaf" id="m-right-leaf" /> */}
       <h2 id="menu-heading" className="sr-only">
       {/* sr-only-->This hides the element visually but keeps it accessible. */}
       Cocktail Menu  

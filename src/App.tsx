@@ -21,7 +21,7 @@ export const App = () => {
       <Cocktails/>
       <About />
       <Art/>
-      <Menu/>
+     <Menu/>
     </main>
   )
 }
