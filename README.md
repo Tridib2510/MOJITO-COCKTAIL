@@ -1,75 +1,79 @@
-# React + TypeScript + Vite
+# 🍹 Mojito Cocktail Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern **Mojito cocktail themed website** built with smooth animations and interactive UI using **React and GSAP**.
 
-Currently, two official plugins are available:
+This project focuses on creating a visually rich landing page experience using **scroll-based animations, smooth transitions, and interactive elements** inspired by premium beverage brand websites.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 🚀 Tech Stack
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+- React
+- GSAP (GreenSock Animation Platform)
+- ScrollTrigger
+- Tailwind CSS
+- Vite
 
-Note: This will impact Vite dev & build performances.
+---
 
-## Expanding the ESLint configuration
+## ✨ Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- 🍃 Smooth scroll animations
+- 🍹 Mojito themed design
+- 🎬 GSAP timeline animations
+- 📜 ScrollTrigger based effects
+- 🎨 Responsive layout
+- ⚡ Fast development with Vite
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 📚 What I Learned
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+While building this project I learned:
+
+- Integrating **GSAP with React**
+- Creating **scroll-based animations with ScrollTrigger**
+- Managing animation timelines
+- Structuring animation-heavy UI components
+- Designing modern landing pages
+
+---
+
+## ⚙️ Installation
+
+Clone the repository
+
+```bash
+git clone https://github.com/Tridib2510/mojito-cocktail.git
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Go to the project directory
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+cd mojito-cocktail
 ```
+
+Install dependencies
+
+```bash
+npm install
+```
+
+Run the development server
+
+```bash
+npm run dev
+```
+
+---
+
+## 👨‍💻 Author
+
+**Tridib Roy Chowdhury**
+
+GitHub:  
+https://github.com/Tridib2510
+
+---
+
+⭐ If you like this project, consider giving it a star!
