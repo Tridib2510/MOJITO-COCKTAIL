@@ -5,6 +5,7 @@ import Hero from "./components/Hero"
 import Cocktails from "./components/Cocktails"
 import About from "./components/About"
 import Art from "./components/Art"
+import Menu from "./components/Menu"
 gsap.registerPlugin(ScrollTrigger,SplitText) //Both plugins can now be used globally in our application
 // Split Text allow us to break text into individual characters for
 //detailed text animation 
@@ -20,6 +21,7 @@ export const App = () => {
       <Cocktails/>
       <About />
       <Art/>
+      <Menu/>
     </main>
   )
 }

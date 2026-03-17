@@ -20,7 +20,7 @@ const Art = () => {
             opacity:0,
             stagger:0.2,
             ease:'power1.inOut'
-        }) //As we scroll up all the elements with class will-fade will fade and when we scroll up they will again reappear
+        }) //As we scroll down all the elements with class will-fade will fade and when we scroll up they will again reappear
         .to('.masked-img',{
             scale:1.3,
             maskPostion:'center',
